@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>QuadraticEquation.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">QuadraticEquation.java</span></div><h1>QuadraticEquation.java</h1><pre class="source lang-java linenums">import java.util.Objects;
+
+/**
+ * Bai 3: Giai phuong trinh bac 2: a*x^2 + b*x + c = 0.
+ *
+ * Tra ve mang gom 0, 1 hoac 2 nghiem thuc:
+ *   - delta &lt; 0  -&gt; mang rong (0 nghiem)
+ *   - delta == 0 -&gt; 1 nghiem kep
+ *   - delta &gt; 0  -&gt; 2 nghiem phan biet
+ *
+ * Cac loai nhanh:
+ *   - Nhanh dieu kien (conditional): phan loai delta
+ *   - Nhanh tuyen tinh (linear): tra ve mang theo truong hop
+ *   - Ngoai le: nem IllegalArgumentException neu a == 0 (khong con la bac 2)
+ */
+public final class QuadraticEquation {
+
+    private QuadraticEquation() {
+    }
+
+    /**
+     * Giai phuong trinh bac 2.
+     *
+     * @param a he so a (a != 0)
+     * @param b he so b
+     * @param c he so c
+     * @return mang chua 0..2 nghiem thuc
+     */
+    public static double[] solve(double a, double b, double c) {
+        // --- Ngoai le (exception handling): a phai khac 0 ---
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        if (a == 0.0) {</span>
+<span class="fc" id="L32">            throw new IllegalArgumentException(</span>
+                &quot;He so a phai khac 0 de la phuong trinh bac 2&quot;);
+        }
+
+        // Tinh delta (nhanh tuyen tinh)
+<span class="fc" id="L37">        double delta = b * b - 4.0 * a * c;</span>
+
+        // --- Nhanh dieu kien (conditional branch): phan loai delta ---
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (delta &lt; 0.0) {</span>
+            // Khong co nghiem thuc (nhanh tuyen tinh tra ve mang rong)
+<span class="fc" id="L42">            return new double[0];</span>
+<span class="fc bfc" id="L43" title="All 2 branches covered.">        } else if (delta == 0.0) {</span>
+            // Nghiem kep (nhanh tuyen tinh tra ve 1 nghiem)
+<span class="fc" id="L45">            double x = -b / (2.0 * a);</span>
+<span class="fc" id="L46">            return new double[]{x};</span>
+        } else {
+            // 2 nghiem phan biet (nhanh tuyen tinh tra ve 2 nghiem)
+<span class="fc" id="L49">            double sqrtDelta = Math.sqrt(delta);</span>
+<span class="fc" id="L50">            double x1 = (-b + sqrtDelta) / (2.0 * a);</span>
+<span class="fc" id="L51">            double x2 = (-b - sqrtDelta) / (2.0 * a);</span>
+<span class="fc" id="L52">            return new double[]{x1, x2};</span>
+        }
+    }
+
+    /**
+     * Phien ban tra ve chuoi mo ta (giup test doc ket qua).
+     */
+    public static String describe(double a, double b, double c) {
+<span class="fc" id="L60">        Objects.requireNonNull(a + &quot;&quot;, &quot;a khong duoc null&quot;);</span>
+<span class="fc" id="L61">        double[] roots = solve(a, b, c);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (roots.length == 0) return &quot;Vo nghiem&quot;;</span>
+<span class="fc bfc" id="L63" title="All 2 branches covered.">        if (roots.length == 1) return &quot;Nghiem kep x = &quot; + roots[0];</span>
+<span class="fc" id="L64">        return &quot;Hai nghiem x1 = &quot; + roots[0] + &quot;, x2 = &quot; + roots[1];</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

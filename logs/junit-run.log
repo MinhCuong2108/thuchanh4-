@@ -1,0 +1,94 @@
+[36m.[0m
+[36m+--[0m [36mJUnit Jupiter[0m [32m[OK][0m
+[36m| +--[0m [36mArrayUtilsTest[0m [32m[OK][0m
+[36m| | +--[0m [34mmin double: null va rong[0m [32m[OK][0m
+[36m| | +--[0m [34mmin double: phan tu NaN / vo cuc[0m [32m[OK][0m
+[36m| | +--[0m [34mmin int: mang co nhieu phan tu[0m [32m[OK][0m
+[36m| | +--[0m [34mmin int: mang null[0m [32m[OK][0m
+[36m| | +--[0m [34mmin double: hop le[0m [32m[OK][0m
+[36m| | '--[0m [34mmin int: mang rong[0m [32m[OK][0m
+[36m| +--[0m [36mFactorialSumTest[0m [32m[OK][0m
+[36m| | +--[0m [34msumOfFactorials: dau vao khong hop le[0m [32m[OK][0m
+[36m| | +--[0m [34msumOfFactorials: gia tri dung[0m [32m[OK][0m
+[36m| | +--[0m [34mfactorial: am hoac vuot qua MAX_N[0m [32m[OK][0m
+[36m| | '--[0m [34mfactorial: gia tri dung[0m [32m[OK][0m
+[36m| +--[0m [36mPrimeUtilsTest[0m [32m[OK][0m
+[36m| | +--[0m [34misPrime: cac so khong nguyen to[0m [32m[OK][0m
+[36m| | +--[0m [34misPrime: cac so nguyen to nho[0m [32m[OK][0m
+[36m| | +--[0m [34mprimesUpTo: liet ke dung[0m [32m[OK][0m
+[36m| | '--[0m [34misPrime: nho hon 2 nem ngoai le[0m [32m[OK][0m
+[36m| +--[0m [36mGCDUtilsTest[0m [32m[OK][0m
+[36m| | +--[0m [34mgcdRecursive: tuong tu vong lap[0m [32m[OK][0m
+[36m| | +--[0m [34mgcd: vong lap Euclid[0m [32m[OK][0m
+[36m| | +--[0m [34mgcdRecursive: dau vao khong hop le[0m [32m[OK][0m
+[36m| | '--[0m [34mgcd: so am hoac khong nem ngoai le[0m [32m[OK][0m
+[36m| +--[0m [36mAlternatingSumTest[0m [32m[OK][0m
+[36m| | +--[0m [34mformula: n khong hop le[0m [32m[OK][0m
+[36m| | +--[0m [34malternatingSum: n le[0m [32m[OK][0m
+[36m| | +--[0m [34malternatingSum: n chan[0m [32m[OK][0m
+[36m| | +--[0m [34malternatingSum: n khong hop le[0m [32m[OK][0m
+[36m| | '--[0m [34mformula: n le va n chan[0m [32m[OK][0m
+[36m| +--[0m [36mRectangleUtilsTest[0m [32m[OK][0m
+[36m| | +--[0m [34mperimeter: hai canh duong[0m [32m[OK][0m
+[36m| | +--[0m [34mperimeter: dau vao khong hop le[0m [32m[OK][0m
+[36m| | +--[0m [34marea: chieu dai khong hop le[0m [32m[OK][0m
+[36m| | +--[0m [34marea: hai canh duong[0m [32m[OK][0m
+[36m| | '--[0m [34marea: chieu rong khong hop le[0m [32m[OK][0m
+[36m| +--[0m [36mWhiteBoxCoverageTest[0m [32m[OK][0m
+[36m| | +--[0m [36mNgoai le (Exception handling)[0m [32m[OK][0m
+[36m| | | +--[0m [34mgcdNegative()[0m [32m[OK][0m
+[36m| | | +--[0m [34marrayNull()[0m [32m[OK][0m
+[36m| | | +--[0m [34marrayEmpty()[0m [32m[OK][0m
+[36m| | | +--[0m [34mrectangleNegativeSide()[0m [32m[OK][0m
+[36m| | | +--[0m [34msumFactorialZero()[0m [32m[OK][0m
+[36m| | | +--[0m [34mfactorialNegative()[0m [32m[OK][0m
+[36m| | | +--[0m [34malternatingZeroN()[0m [32m[OK][0m
+[36m| | | +--[0m [34mcircleZeroRadius()[0m [32m[OK][0m
+[36m| | | +--[0m [34mprimeTooSmall()[0m [32m[OK][0m
+[36m| | | '--[0m [34mquadraticZeroA()[0m [32m[OK][0m
+[36m| | +--[0m [36mVong lap (Loop)[0m [32m[OK][0m
+[36m| | | +--[0m [34mprimesUpToLoop()[0m [32m[OK][0m
+[36m| | | +--[0m [34msumFactorialLoop()[0m [32m[OK][0m
+[36m| | | +--[0m [34mgcdLoop()[0m [32m[OK][0m
+[36m| | | +--[0m [34mprimeOddLoop()[0m [32m[OK][0m
+[36m| | | '--[0m [34mminArrayLoop()[0m [32m[OK][0m
+[36m| | +--[0m [36mNhanh dieu kien (Conditional branch)[0m [32m[OK][0m
+[36m| | | +--[0m [34mquadraticTwoRoots()[0m [32m[OK][0m
+[36m| | | +--[0m [34mprimeTwo()[0m [32m[OK][0m
+[36m| | | +--[0m [34mquadraticNoRoot()[0m [32m[OK][0m
+[36m| | | +--[0m [34malternatingEvenN()[0m [32m[OK][0m
+[36m| | | +--[0m [34mquadraticDoubleRoot()[0m [32m[OK][0m
+[36m| | | +--[0m [34malternatingOddN()[0m [32m[OK][0m
+[36m| | | '--[0m [34mprimeEvenComposite()[0m [32m[OK][0m
+[36m| | '--[0m [36mNhanh tuyen tinh (Linear branch)[0m [32m[OK][0m
+[36m| |   +--[0m [34mperimeterValid()[0m [32m[OK][0m
+[36m| |   +--[0m [34msumFactorialsLinear()[0m [32m[OK][0m
+[36m| |   '--[0m [34mrectangleAreaValid()[0m [32m[OK][0m
+[36m| +--[0m [36mQuadraticEquationTest[0m [32m[OK][0m
+[36m| | +--[0m [34mdescribe: kiem tra chuoi mo ta[0m [32m[OK][0m
+[36m| | +--[0m [34ma == 0: nem ngoai le[0m [32m[OK][0m
+[36m| | +--[0m [34mdelta < 0: vo nghiem[0m [32m[OK][0m
+[36m| | +--[0m [34mdelta == 0: nghiem kep[0m [32m[OK][0m
+[36m| | '--[0m [34mdelta > 0: hai nghiem phan biet[0m [32m[OK][0m
+[36m| '--[0m [36mCircleUtilsTest[0m [32m[OK][0m
+[36m|   +--[0m [34mperimeter: ban kinh hop le[0m [32m[OK][0m
+[36m|   +--[0m [34mperimeter: ban kinh khong hop le nem ngoai le[0m [32m[OK][0m
+[36m|   +--[0m [34marea: ban kinh khong hop le nem ngoai le[0m [32m[OK][0m
+[36m|   '--[0m [34marea: ban kinh hop le[0m [32m[OK][0m
+[36m+--[0m [36mJUnit Vintage[0m [32m[OK][0m
+[36m'--[0m [36mJUnit Platform Suite[0m [32m[OK][0m
+
+Test run finished after 267 ms
+[        16 containers found      ]
+[         0 containers skipped    ]
+[        16 containers started    ]
+[         0 containers aborted    ]
+[        16 containers successful ]
+[         0 containers failed     ]
+[        62 tests found           ]
+[         0 tests skipped         ]
+[        62 tests started         ]
+[         0 tests aborted         ]
+[        62 tests successful      ]
+[         0 tests failed          ]
+

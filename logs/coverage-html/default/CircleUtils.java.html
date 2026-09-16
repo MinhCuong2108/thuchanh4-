@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CircleUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">CircleUtils.java</span></div><h1>CircleUtils.java</h1><pre class="source lang-java linenums">/**
+ * Bai 1: Tinh chu vi va dien tich hinh tron.
+ *
+ * Cac loai nhanh duoc thuc thi:
+ *   - Nhanh tuyen tinh (linear): tra ve gia tri tinh toan
+ *   - Nhanh dieu kien (conditional): kiem tra ban kinh hop le
+ *   - Vong lap (loop): khong su dung (giai thich trong javadoc cua ham)
+ *   - Ngoai le (exception): nem IllegalArgumentException khi ban kinh am hoac khong hop le
+ */
+public final class CircleUtils {
+
+    private CircleUtils() {
+        // utility class, khong cho phep khoi tao
+    }
+
+    /**
+     * Tinh chu vi hinh tron.
+     *
+     * @param r ban kinh (r &gt; 0)
+     * @return chu vi = 2 * PI * r
+     * @throws IllegalArgumentException neu r khong hop le (r &lt;= 0 hoac NaN)
+     */
+    public static double perimeter(double r) {
+<span class="fc" id="L24">        validateRadius(r); // --- Nhanh dieu kien + ngoai le ---</span>
+        // --- Nhanh tuyen tinh (linear branch) ---
+<span class="fc" id="L26">        return 2.0 * Math.PI * r;</span>
+    }
+
+    /**
+     * Tinh dien tich hinh tron.
+     *
+     * @param r ban kinh (r &gt; 0)
+     * @return dien tich = PI * r * r
+     * @throws IllegalArgumentException neu r khong hop le
+     */
+    public static double area(double r) {
+<span class="fc" id="L37">        validateRadius(r); // --- Nhanh dieu kien + ngoai le ---</span>
+        // --- Nhanh tuyen tinh (linear branch) ---
+<span class="fc" id="L39">        return Math.PI * r * r;</span>
+    }
+
+    /**
+     * Kiem tra ban kinh hop le. Tach rieng de cac nhanh dieu kien deu
+     * co the duoc kiem thu (100% branch coverage).
+     */
+    private static void validateRadius(double r) {
+        // --- Nhanh dieu kien (conditional branch) ---
+<span class="fc bfc" id="L48" title="All 6 branches covered.">        if (Double.isNaN(r) || Double.isInfinite(r) || r &lt;= 0.0) {</span>
+            // --- Ngoai le (exception handling) ---
+<span class="fc" id="L50">            throw new IllegalArgumentException(</span>
+                &quot;Ban kinh phai la so thuc duong hop le, nhan duoc: &quot; + r);
+        }
+<span class="fc" id="L53">    }</span>
+
+    /*
+     * Ghi chu: Bai tap nay MINH HOA cac loai nhanh, nhung khong nhat thiet
+     * moi ham phai co day du ca 4 loai. Vong lap khong xuat hien trong bai 1
+     * vi cong thuc tinh chu vi / dien tich la cong thuc truc tiep.
+     */
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

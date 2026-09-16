@@ -1,0 +1,25 @@
+# Build artifacts
+build/
+*.class
+*.exec
+
+# Logs (kept, but uncomment to ignore)
+# logs/coverage-html/
+# logs/coverage.csv
+# logs/coverage.xml
+# logs/junit-run.log
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local config
+*.local

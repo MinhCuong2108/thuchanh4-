@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FactorialSum.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">FactorialSum.java</span></div><h1>FactorialSum.java</h1><pre class="source lang-java linenums">/**
+ * Bai 8: Tinh tong S = 1! + 2! + 3! + ... + n! (su dung ham giai thua).
+ *
+ * Cac loai nhanh:
+ *   - Vong lap long (nested loop): tinh giai thua roi cong don
+ *   - Nhanh dieu kien: kiem tra n &lt; 1 hoac vuot qua gioi han
+ *   - Ngoai le: nem IllegalArgumentException neu n &lt; 1
+ *   - Nhanh tuyen tinh: tra ve tong
+ */
+public final class FactorialSum {
+
+    /** Gioi han de tranh tran so (20! &lt; Long.MAX_VALUE). */
+    public static final int MAX_N = 20;
+
+    private FactorialSum() {
+    }
+
+    /**
+     * Tinh giai thua cua n.
+     */
+    public static long factorial(int n) {
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        if (n &lt; 0) {</span>
+<span class="fc" id="L23">            throw new IllegalArgumentException(&quot;n phai &gt;= 0, nhan duoc: &quot; + n);</span>
+        }
+<span class="fc bfc" id="L25" title="All 2 branches covered.">        if (n &gt; MAX_N) {</span>
+<span class="fc" id="L26">            throw new IllegalArgumentException(</span>
+                &quot;n phai &lt;= &quot; + MAX_N + &quot; de tranh tran long, nhan duoc: &quot; + n);
+        }
+<span class="fc" id="L29">        long result = 1;</span>
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        for (int i = 2; i &lt;= n; i++) {</span>
+<span class="fc" id="L31">            result *= i;</span>
+        }
+<span class="fc" id="L33">        return result;</span>
+    }
+
+    /**
+     * Tinh tong S = 1! + 2! + 3! + ... + n!.
+     */
+    public static long sumOfFactorials(int n) {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (n &lt; 1) {</span>
+<span class="fc" id="L41">            throw new IllegalArgumentException(</span>
+                &quot;n phai &gt;= 1, nhan duoc: &quot; + n);
+        }
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if (n &gt; MAX_N) {</span>
+<span class="fc" id="L45">            throw new IllegalArgumentException(</span>
+                &quot;n phai &lt;= &quot; + MAX_N + &quot; de tranh tran long, nhan duoc: &quot; + n);
+        }
+<span class="fc" id="L48">        long sum = 0;</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        for (int i = 1; i &lt;= n; i++) {</span>
+<span class="fc" id="L50">            sum += factorial(i);</span>
+        }
+<span class="fc" id="L52">        return sum;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

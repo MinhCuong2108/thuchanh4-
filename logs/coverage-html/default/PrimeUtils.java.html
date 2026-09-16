@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PrimeUtils.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCo Coverage Report</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">PrimeUtils.java</span></div><h1>PrimeUtils.java</h1><pre class="source lang-java linenums">/**
+ * Bai 5: Kiem tra n co phai la so nguyen to hay khong.
+ *
+ * Cac loai nhanh:
+ *   - Nhanh dieu kien: phan loai n &lt; 2, n bang 2, n chan, ...
+ *   - Vong lap: duyet u le tu 3 den sqrt(n)
+ *   - Ngoai le: nem IllegalArgumentException neu n &lt; 2 hoac am
+ *   - Nhanh tuyen tinh: tra ve true/false
+ */
+public final class PrimeUtils {
+
+    private PrimeUtils() {
+    }
+
+    /**
+     * Kiem tra so nguyen to.
+     *
+     * @param n so nguyen can kiem tra
+     * @return true neu n la so nguyen to
+     * @throws IllegalArgumentException neu n &lt; 2
+     */
+    public static boolean isPrime(int n) {
+        // --- Ngoai le: n phai &gt;= 2 ---
+<span class="fc bfc" id="L24" title="All 2 branches covered.">        if (n &lt; 2) {</span>
+<span class="fc" id="L25">            throw new IllegalArgumentException(</span>
+                &quot;n phai &gt;= 2 de kiem tra nguyen to, nhan duoc: &quot; + n);
+        }
+
+        // --- Nhanh dieu kien: n = 2 ---
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (n == 2) {</span>
+<span class="fc" id="L31">            return true;</span>
+        }
+        // --- Nhanh dieu kien: n chan (khong nguyen to) ---
+<span class="fc bfc" id="L34" title="All 2 branches covered.">        if (n % 2 == 0) {</span>
+<span class="fc" id="L35">            return false;</span>
+        }
+
+        // --- Vong lap: duyet u le ---
+<span class="fc" id="L39">        int limit = (int) Math.sqrt(n);</span>
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        for (int i = 3; i &lt;= limit; i += 2) {</span>
+            // --- Nhanh dieu kien trong vong lap ---
+<span class="fc bfc" id="L42" title="All 2 branches covered.">            if (n % i == 0) {</span>
+<span class="fc" id="L43">                return false;</span>
+            }
+        }
+        // --- Nhanh tuyen tinh: la nguyen to ---
+<span class="fc" id="L47">        return true;</span>
+    }
+
+    /**
+     * Liet ke cac so nguyen to tu 2 den n (dung vong lap).
+     */
+    public static int[] primesUpTo(int n) {
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        if (n &lt; 2) {</span>
+<span class="fc" id="L55">            return new int[0];</span>
+        }
+<span class="fc" id="L57">        int count = 0;</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        for (int i = 2; i &lt;= n; i++) {</span>
+<span class="fc bfc" id="L59" title="All 2 branches covered.">            if (isPrime(i)) {</span>
+<span class="fc" id="L60">                count++;</span>
+            }
+        }
+<span class="fc" id="L63">        int[] primes = new int[count];</span>
+<span class="fc" id="L64">        int idx = 0;</span>
+<span class="fc bfc" id="L65" title="All 2 branches covered.">        for (int i = 2; i &lt;= n; i++) {</span>
+<span class="fc bfc" id="L66" title="All 2 branches covered.">            if (isPrime(i)) {</span>
+<span class="fc" id="L67">                primes[idx++] = i;</span>
+            }
+        }
+<span class="fc" id="L70">        return primes;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
